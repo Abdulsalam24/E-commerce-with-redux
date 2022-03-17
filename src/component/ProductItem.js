@@ -21,28 +21,38 @@ const ProductItem = ({filter , setFilter , data}) => {
     return (
       <div className="container">
         <div className="productItem">
-          <div className="btn">
+          <div className="btn-select">
             <button onClick={() => setFilter(data)}>All</button>
-
             <button onClick={() => handleCat("men's clothing")}>men</button>
             <button onClick={() => handleCat("women's clothing")}>women</button>
             <button onClick={() => handleCat("electronics")}>Accessory</button>
             <button onClick={() => handleCat("jewelery")}>jewelry</button>
           </div>
           <div className="products">
-            {
-                filter.map((item) => {
-                  return (
-                    <div className="product-div" key={item.id}>
-                        <img src={item.image} alt={item.title} />
-                        <h4>{item.title}</h4>
-                        <button><Link to={`/single/${item.id}`}>Check item </Link></button>
-                        <button onClick={() => addCart(item)}>add </button>
-                        
-                    </div>
-                  )
-                })
-            }
+
+                    {
+                        filter.map((item) => {
+                            return (
+                              <div className="card product-div" key={item.id}>
+                                <img className="card-img-top" src={item.image} alt={item.title}/>
+                                <div className="card-body">
+                                  <h5 className="card-title">{item.title}</h5>
+                                  <div className='my-4'>
+                                    <div className="btn-product">
+                                    <button className="btn btn-primary" onClick={() => addCart(item)}>Add
+                                    </button>
+                                    <button className="btn btn-primary mx-4">
+                                          <Link to={`/single/${item.id}`}>Check item
+                                          </Link>
+                                    </button>
+                                    </div>
+                                  </div>
+
+                                </div>
+                            </div>
+                            )
+                        })
+                    }
           </div>
         </div>
       </div>

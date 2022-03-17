@@ -25,6 +25,7 @@ const cartReducer = (state = cart , action) => {
                 return state.map((x) => 
                 x.id === product.id ? {...x , qty : x.qty - 1} : x)
             }
+            
 
         default:
             return state

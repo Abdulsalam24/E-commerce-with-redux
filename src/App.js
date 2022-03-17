@@ -24,7 +24,6 @@ const App = () => {
         <Route exact path='/Cart' element={<Cart cart={cart} setCart={setCart}/>}/>
       </Routes>
     </>
-
   )
 }
 
