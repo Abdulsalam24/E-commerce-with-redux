@@ -1,12 +1,11 @@
 import React, { useEffect } from 'react'
 import { useDispatch, useSelector } from 'react-redux'
+import NoItem from '../component/NoItem';
 import { delProduct } from '../redux/action/Action'
 
 
 
 const Cart = ({cart , setCart}) => {
-
-
 
     const dispatch = useDispatch();
 
@@ -24,11 +23,12 @@ const Cart = ({cart , setCart}) => {
         setCart(state)
       },[state])
 
+      
   return (
     <div className="container">
             <div className='cart'>
             {cart.length >= 1 && (<h2>Total : ${Math.floor(total())}</h2>)}
-            {cart.length === 0 ? (<div className='cart-no'>No Item Added...</div>) : cart.map((item) => (
+            {cart.length === 0 ? <NoItem/> : cart.map((item) => (
                 <div className='cart-item' key={item.id}>
                     <div className='cart-img'>
                         <img src={item.image} alt={item.title}/>

@@ -1,12 +1,12 @@
 import React , {useState} from 'react'
-import Home from './component/Home'
+import Home from './page/Home'
 
 import NavBar from './component/NavBar'
 
 import {Routes , Route} from 'react-router-dom'
-import Single from './component/Single'
-import Product from './component/Product'
-import Cart from './component/Cart'
+import Single from './page/Single'
+import Product from './page/Product'
+import Cart from './page/Cart'
 
 
 

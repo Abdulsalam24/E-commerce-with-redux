@@ -3,6 +3,8 @@ import { useDispatch } from 'react-redux'
 import { Link } from 'react-router-dom'
 import { addProduct } from '../redux/action/Action'
 
+import { motion } from 'framer-motion'
+
 
 const ProductItem = ({filter , setFilter , data}) => {
 
@@ -22,13 +24,15 @@ const ProductItem = ({filter , setFilter , data}) => {
       <div className="container">
         <div className="productItem">
           <div className="btn-select">
-            <button onClick={() => setFilter(data)}>All</button>
+            <button onClick={() => setFilter(data)}>
+              All
+            </button>
             <button onClick={() => handleCat("men's clothing")}>men</button>
             <button onClick={() => handleCat("women's clothing")}>women</button>
             <button onClick={() => handleCat("electronics")}>Accessory</button>
             <button onClick={() => handleCat("jewelery")}>jewelry</button>
           </div>
-          <div className="products">
+          <motion.div layout className="products">
 
                     {
                         filter.map((item) => {
@@ -53,7 +57,7 @@ const ProductItem = ({filter , setFilter , data}) => {
                             )
                         })
                     }
-          </div>
+          </motion.div>
         </div>
       </div>
     )

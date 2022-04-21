@@ -1,5 +1,7 @@
 import React, { useState , useEffect } from 'react'
-import ProductItem from './ProductItem';
+import Error from '../component/Error';
+import EventsLoader from '../component/EventsLoader';
+import ProductItem from '../component/ProductItem';
 
 const Product = () => {
     const [data, setData] = useState([]);
@@ -27,9 +29,9 @@ const Product = () => {
 
   return (
     <section id='product'>
-        {loading ? 'loading...' : <ProductItem filter={filter} setFilter={setFilter} data={data}/>}
+        {loading ? <EventsLoader/> : <ProductItem filter={filter} setFilter={setFilter} data={data}/>}
 
-        {error ? 'failed to fetch' : ''}
+        {error ? <Error/> : ''}
     </section>
   )
 }

@@ -1,11 +1,12 @@
 import React from 'react'
 // import {Link} from 'react-router-dom'
 
-import imgOne from './asset/imgOne.jpg'
-import imgTwo from './asset/imgTwo.jpg'
-import imgThree from './asset/imgThree.jpg'
+import imgOne from '../asset/img/imgOne.jpg'
+import imgTwo from '../asset/img/imgTwo.jpg'
+import imgThree from '../asset/img/imgThree.jpg'
 
 const Home = () => {
+    
     return (
         <div
             id="carouselExampleIndicators"
